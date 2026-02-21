@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "Data Extractor",
+  "version": "1.0",
+  "description": "Extracts data from paginated tables and downloads as CSV.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "optional_host_permissions": [
+        "<all_urls>"
+    ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["tabs-config.json"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"], 
+      "js": ["config.js", "js/checkin.js"]
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+/* ==============================
+   RESET + FIX POPUP EXTENSION
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ÉP KÍCH THƯỚC POPUP */
+html, body {
+  width: 300px;       /* ✅ fix cứng chiều ngang */
+  min-width: 300px;   /* ✅ không cho bóp nhỏ */
+  height: auto;
+  font-family: Arial, sans-serif;
+}
+
+/* Padding nhẹ thôi */
+body {
+  background: #f9fafb;
+  border-radius: 10px;
+}
+
+/* ==============================
+   CONTAINER J&T STYLE
+================================ */
+.container {
+  width: 100%;
+  background: #fff1f2;
+  border-radius: 12px;
+  padding: 10px 14px;
+  border: 1px solid rgba(240, 57, 57, 0.18);
+  box-shadow: 0 6px 14px rgba(243, 67, 67, 0.12);
+}
+
+/* TITLE */
+.container h3 {
+  text-align: center;
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #1e293b;
+  position: relative;
+}
+
+.container h3::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #3b82f6;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+
+/* ==============================
+   FORM GROUP
+================================ */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+label {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #7a1c1c;
+  white-space: nowrap; /* ✅ tránh bể chữ */
+}
+
+/* Input */
+input[type="number"],
+input[type="text"] {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 13px;
+  border-radius: 8px;
+  border: 1px solid rgba(239, 68, 68, 0.28);
+  background: #fff;
+  transition: 0.2s ease;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus {
+  outline: none;
+  border-color: #ef4444;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.18);
+}
+
+/* ==============================
+   PAGE INPUT ROW
+================================ */
+.form_input_page {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.form_input_page span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #dc2626;
+  margin-bottom: 7px;
+}
+
+/* ==============================
+   BUTTON
+================================ */
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, #ef4444, #dc2626);
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  filter: brightness(0.95);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(239, 68, 68, 0.25);
+}
+
+button:active {
+  transform: translateY(0px);
+  box-shadow: none;
+}
+
+/* ==============================
+   FOOTER
+================================ */
+.footer {
+  margin-top: 14px;
+  padding-top: 8px;
+  border-top: 1px dashed #e5e5e5;
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+}
+
+.footer b {
+  color: #333;
+  font-weight: bold;
+}
+
+.footer p {
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* Loading spinner on button */
+#startButton.loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+#startButton.loading::after {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-left: 10px;
+  border: 2px solid rgba(255,255,255,0.6);
+  border-top-color: rgba(255,255,255,1);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  vertical-align: -2px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.action-row {
+  display: flex;
+  gap: 8px;
+}
+
+#stopButton {
+  width: 38px;
+  min-width: 38px;
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#stopButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+#stopButton:hover:not(:disabled) {
+  background: #dc2626;
+}

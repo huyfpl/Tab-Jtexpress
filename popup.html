@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    
+    <div class="container">
+       <h3>Trình xuất dữ liệu</h3>
+
+
+        <div class="form_input_page">
+            <div class="form-group">
+                <label for="startPage">Trang bắt đầu</label>
+                <input type="number" id="startPage" min="1" required value="1">
+            </div>
+
+            <span>:</span>
+
+            <div class="form-group">
+                <label for="endPage">Kết thúc</label>
+                <input type="number" id="endPage" min="1" required value="10">
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="fileName">Tên file:</label>
+            <input type="text" id="fileName" placeholder="Nhập tên file" required>
+        </div>
+
+        <div class="action-row">
+  <button id="startButton">Bắt đầu xuất</button>
+  <button id="stopButton" title="Dừng">⏹</button>
+</div>
+
+
+        <div class="footer">
+  <p>⚡ Dễ mà — <b>Huy</b> giúp bạn làm việc nhẹ nhàng hơn</p>
+</div>
+
+    </div>
+
+    <!-- ✅ load thư viện xlsx -->
+    <script src="js/xlsx.full.min.js"></script>
+    <!-- ✅ load config quản lý tabs -->
+    <script src="config.js"></script>
+    <script src="js/checkin.js"></script>
+    <!-- ✅ logic popup -->
+    <script src="popup.js"></script>
+</body>
+</html>
