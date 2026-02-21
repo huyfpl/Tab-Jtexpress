@@ -6,7 +6,7 @@ const TAB_CONFIG_MANAGER = (() => {
   const loadConfig = async () => {
     if (cachedConfig) return cachedConfig;
 
-    // 1️⃣ Thử fetch từ GitHub trước
+    // 1️⃣ Thử fetch từ GitHub
     try {
       const response = await fetch(CONFIG_URL);
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -14,10 +14,10 @@ const TAB_CONFIG_MANAGER = (() => {
       cachedConfig = data;
       return data;
     } catch (e) {
-      console.warn('Failed to load tabs config from GitHub, trying local file:', e);
+      console.warn('Failed to load tabs config from GitHub:', e);
     }
 
-    // 2️⃣ Nếu GitHub không thành công, thử fetch từ file local
+    // 2️⃣ Nếu GitHub không thành công, fetch từ file local
     try {
       const response = await fetch(chrome.runtime.getURL('tabs-config.json'));
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -25,12 +25,9 @@ const TAB_CONFIG_MANAGER = (() => {
       cachedConfig = data;
       return data;
     } catch (e) {
-      console.warn('Failed to load tabs config from local file:', e);
+      console.error('Failed to load tabs config from local file:', e);
+      return { tabs: [] };
     }
-
-    // 3️⃣ Fallback: không có config nào có sẵn
-    console.error('Failed to load tabs config from both sources');
-    return { tabs: [] };
   };
 
   return {
