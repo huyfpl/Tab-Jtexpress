@@ -1,14 +1,5 @@
 {
   "tabs": [
-    {
-      "id": "tab-Centerforplay",
-      "name": "In lại đơn",
-      "selector": "#tab-Centerforplay"
-    },
-    {
-      "id": "tab-sendWaybillSite",
-      "name": "Quản lý vận đơn gửi",
-      "selector": "#tab-sendWaybillSite"
-    }
+    
   ]
 }
