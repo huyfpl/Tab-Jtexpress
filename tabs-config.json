@@ -9,6 +9,11 @@
       "id": "tab-sendWaybillSite",
       "name": "Quản lý vận đơn gửi",
       "selector": "#tab-sendWaybillSite"
+    },
+    {
+      "id": "tab-NETWORKINFO",
+      "name": "Quản lý vận đơn phát",
+      "selector": "#tab-dispatchWaybill"
     }
   ]
 }
