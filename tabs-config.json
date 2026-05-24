@@ -16,7 +16,7 @@
       "selector": "#tab-dispatchWaybill"
     },
     {
-      "id": "tab-NETWORKINFO",
+      "id": "tab-siteStaffSite|basicInformationIndex",
       "name": "Quản lý nhân viên chi nhánh",
       "selector": "#tab-siteStaffSite|basicInformationIndex"
     }
